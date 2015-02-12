@@ -1,0 +1,27 @@
+nb:
+  refinery:
+    plugins:
+      subscribers:
+        title: Subscribers
+    subscribers:
+      admin:
+        subscribers:
+          actions:
+            create_new: Lag en ny Subscriber
+            reorder: Endre rekkefølgen på Subscribers
+            reorder_done: Ferdig å endre rekkefølgen Subscribers
+          records:
+            title: Subscribers
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Subscribers enda. Klikk på "Lag en ny Subscriber" for å legge til din første subscriber.
+          subscriber:
+            view_live_html: Vis hvordan denne subscriber ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne subscriber
+            delete: Fjern denne subscriber permanent
+      subscribers:
+        show:
+          other: Andre Subscribers
+  activerecord:
+    attributes:
+      'refinery/subscribers/subscriber':
+        email: Email

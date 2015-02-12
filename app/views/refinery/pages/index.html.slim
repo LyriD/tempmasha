@@ -1,0 +1,27 @@
+.fotorama-wrap
+  .left
+  .right
+  .fotorama.main data-transition="crossfade" data-auto="false" data-loop="true"
+    - 5.times
+      div data-img="http://lorempixel.com/952/450": a href="http://yandex.ru" ламинирование горячими ножницами
+.framewrap
+  .left
+  .right
+  #frame
+    ul.slidee
+      - 10.times
+        li
+          img src="http://lorempixel.com/220/110"
+          a href="http://yandex.ru" ламинирование волос
+.left
+  .posts
+    - 4.times
+      .post class="#{ %w(red green blue yellow).sample }"
+        img src="http://lorempixel.com/#{rand(300..600)}/#{rand(100..600)}"
+        h2 Праздничные скидки во всех салонах
+        p Phasellus hendrerit efficitur varius. Etiam aliquam arcu eu lorem mattis, in fringilla leo porta. Integer eget erat neque. Duis sollicitudin rhoncus neque, nec maximus eros scelerisque eget. Phasellus placerat auctor felis non rhoncus. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam cursus eu urna vel hendrerit. Suspendisse eget massa elementum, laoreet erat eu, hendrerit quam. Ut tempor, urna sed commodo feugiat, ligula eros volutpat diam, ut tristique enim neque quis nunc.
+        a.more href="#" Подробности акции
+.right
+  = render 'pages/salons'
+a.allNews href="#" все акции новости и скидки
+

@@ -1,0 +1,16 @@
+namespace :deploy do
+  desc 'Create symlinks for YAML files'
+  task :create_yml_symlinks do
+    on roles(:app) do
+      execute "cd #{deploy_path}; ln -s #{shared_path}/yml/* #{release_path}/config/"
+    end
+  end
+
+  desc "Update source of 'current' symlink"
+  task :update_current_symlink do
+    on roles(:app) do
+      execute "rm -rf #{current_path}"
+      execute "cd #{deploy_path}; ln -s releases/#{release_timestamp} current"
+    end
+  end
+end

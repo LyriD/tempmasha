@@ -1,0 +1,32 @@
+nl:
+  refinery:
+    plugins:
+      saloons:
+        title: Saloons
+    saloons:
+      admin:
+        saloons:
+          actions:
+            create_new: Nieuwe Saloon toevoegen
+            reorder: De volgorde van de Saloons wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Saloon-volgorde
+          records:
+            title: Saloons
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Saloons. Druk op 'Nieuwe Saloon toevoegen' om de eerste toe te voegen.
+          saloon:
+            view_live_html: Deze saloon op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze saloon
+            delete: Deze saloon definitief verwijderen
+      saloons:
+        show:
+          other: Andere Saloons
+  activerecord:
+    attributes:
+      'refinery/saloons/saloon':
+        title: Title
+        body: Body
+        adress: Adress
+        phone: Phone
+        time: Time
+        map: Map

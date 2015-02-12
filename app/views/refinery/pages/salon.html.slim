@@ -1,0 +1,16 @@
+ul#breadcrumbs
+  li: a href="#" Главная
+  li.active: a href="#" о нас
+h1 О нашем салоне
+.left
+  - unless @page.images.empty?
+    .fotorama-wrap
+      .left
+      .right
+      .fotorama data-auto="false" data-loop="true"
+        - @page.images.each do |image|
+          = image_tag image.thumbnail(geometry: "620x600>").url
+  = raw @page.content_for(:body)
+
+.right
+  = render 'salons'

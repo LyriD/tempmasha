@@ -1,0 +1,47 @@
+ul#breadcrumbs
+  li: a href="/" Главная
+  li: a href="/#{get_resource_url(@page)}" = @page.title
+h1=@page.title
+.left
+  - unless @page.images.empty?
+    .fotorama-wrap
+      .left
+      .right
+      .fotorama data-auto="false" data-loop="true"
+        - @page.images.each do |image|
+          = image_tag image.thumbnail(geometry: "620x275#c").url
+  = raw @page.content_for(:body)
+
+  .others
+    h2 Другие новости или акции
+    .posts
+      - post = Refinery::Blog::Category.where(title: 'Новости').first.posts.order("RANDOM()").first
+      .post
+        = image_tag post.images.first.thumbnail(geometry: "620x275#c").url unless post.images.empty?
+        h2 =post.title
+        = raw post.custom_teaser
+        = link_to 'Подробнее', get_resource_url(post), class: 'more'
+
+      - post = Refinery::Blog::Category.where(title: 'Акции').first.posts.order("RANDOM()").first
+      .post
+        = image_tag post.images.first.thumbnail(geometry: "620x275#c").url unless post.images.empty?
+        h2 =post.title
+        = raw post.custom_teaser
+        = link_to 'Подробнее', get_resource_url(post), class: 'more'
+
+.right
+  .posts
+    - post = Refinery::Blog::Category.where(title: 'Статьи').first.posts.order("RANDOM()").first
+    .post
+      = image_tag post.images.first.thumbnail(geometry: "620x275#c").url unless post.images.empty?
+      h2 =post.title
+      = raw post.custom_teaser
+      = link_to 'Подробнее', get_resource_url(post), class: 'more'
+
+    - post = Refinery::Blog::Category.where(title: 'Скидки').first.posts.order("RANDOM()").first
+    .post
+      = image_tag post.images.first.thumbnail(geometry: "620x275#c").url unless post.images.empty?
+      h2 =post.title
+      = raw post.custom_teaser
+      = link_to 'Подробнее', get_resource_url(post), class: 'more'
+

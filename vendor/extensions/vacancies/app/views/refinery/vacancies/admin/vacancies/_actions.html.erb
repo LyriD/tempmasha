@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Vacancies::Admin::VacanciesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.vacancies_admin_vacancies_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_vacancies_admin_vacancy_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Vacancies::Admin::VacanciesController.sortable? && ::Refinery::Vacancies::Vacancy.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Vacancies"),
+                 refinery.vacancies_admin_vacancies_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Vacancies"),
+                 refinery.vacancies_admin_vacancies_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

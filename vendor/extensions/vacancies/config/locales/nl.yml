@@ -1,0 +1,28 @@
+nl:
+  refinery:
+    plugins:
+      vacancies:
+        title: Vacancies
+    vacancies:
+      admin:
+        vacancies:
+          actions:
+            create_new: Nieuwe Vacancy toevoegen
+            reorder: De volgorde van de Vacancies wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Vacancy-volgorde
+          records:
+            title: Vacancies
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Vacancies. Druk op 'Nieuwe Vacancy toevoegen' om de eerste toe te voegen.
+          vacancy:
+            view_live_html: Deze vacancy op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze vacancy
+            delete: Deze vacancy definitief verwijderen
+      vacancies:
+        show:
+          other: Andere Vacancies
+  activerecord:
+    attributes:
+      'refinery/vacancies/vacancy':
+        title: Title
+        body: Body

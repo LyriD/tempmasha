@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Saloons::Admin::SaloonsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.saloons_admin_saloons_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_saloons_admin_saloon_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Saloons::Admin::SaloonsController.sortable? && ::Refinery::Saloons::Saloon.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Saloons"),
+                 refinery.saloons_admin_saloons_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Saloons"),
+                 refinery.saloons_admin_saloons_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

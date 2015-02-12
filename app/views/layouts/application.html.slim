@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title TowerMakeup
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body class="#{yield :bodyClass}"
+    #root
+      header
+        a.subscribe href="#" подписаться на новости и акции
+        a.rss href="#" rss
+        a.logo href="#"
+        ul
+          li: a href="#" услуги
+          li: a href="#" салоны
+          li: a href="#" йога-центр
+          li: a href="#" акции
+          li: a href="#" статьи
+          li: a href="#" вакансии
+          li: a href="#" подарочные сертификаты
+          li: a href="#" контакты
+      .container
+        = yield
+      #root_footer
+    #footer
+      .container
+        a.logo href="#"
+        ul
+          li: a href="#" услуги
+          li: a href="#" салоны
+          li: a href="#" йога-центр
+          li: a href="#" акции
+          li: a href="#" статьи
+          li: a href="#" вакансии
+          li: a href="#" подарочные сертификаты
+          li: a href="#" контакты
+        p (С) 2014 - все права защищены
+
+

@@ -1,0 +1,27 @@
+fr:
+  refinery:
+    plugins:
+      subscribers:
+        title: Subscribers
+    subscribers:
+      admin:
+        subscribers:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Subscriber
+            reorder: Réordonner les Subscribers
+            reorder_done: Fin de réordonnancement des Subscribers
+          records:
+            title: Subscribers
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Subscriber. Cliquer sur "Créer un(e) nouve(au/l/lle) Subscriber" pour créer votre premi(er/ère) subscriber.'
+          subscriber:
+            view_live_html: Voir ce(t/tte) subscriber <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) subscriber
+            delete: Supprimer définitivement ce(t/tte) subscriber
+      subscribers:
+        show:
+          other: Autres Subscribers
+  activerecord:
+    attributes:
+      'refinery/subscribers/subscriber':
+        email: Email

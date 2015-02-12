@@ -1,0 +1,28 @@
+- @inquiry = Refinery::Inquiries::Inquiry.new
+- Refinery::Vacancies::Vacancy.all.each do |v|
+  .modal#resume-1 style="display: none"
+    a.close href="#"
+    h1 Отправить резюме
+    = form_for [refinery, :inquiries, @inquiry], :html => { :multipart => true } do |f|
+      = f.hidden_field :vacancy_id, value: v.id
+      = f.text_field :name, placeholder: "Ваше имя", class: 'req'
+      = f.text_field :phone, placeholder: "Ваш телефон"
+      = f.text_field :email, placeholder: "Ваш email", class: 'email'
+      = f.text_area :message, placeholder: "Дополнительная информация"
+      input name="inquiry_attach[file]" type="file"
+      a.attach href="#" Прикрепить файл резюме
+      p Максимальный размер файла 10 МБ
+      p Принимаются файлы формата .doc, .txt, .pdf
+      button type="submit" отправить резюме
+ul#breadcrumbs
+  li: a href="#" Главная
+  li: a href="/#{@page.slug}" =@page.title
+h1 Вакансии
+.left
+  - Refinery::Vacancies::Vacancy.all.each do |v|
+    .vacancy
+      h2=v.title
+      = raw v.body
+      a.more href="#" data-modal="resume-1" Откликнуться на вакансию
+.right
+  = render 'salons'

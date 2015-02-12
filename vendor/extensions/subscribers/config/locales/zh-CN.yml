@@ -1,0 +1,29 @@
+zh-CN:
+  refinery:
+    plugins:
+      subscribers:
+        title: Subscribers
+    subscribers:
+      admin:
+        subscribers:
+          actions:
+            create_new: 建立新的 Subscriber
+            reorder: 对 Subscribers 重新排序
+            reorder_done: 对 Subscribers 的重新排序结束
+          records:
+            title: Subscribers
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Subscribers yet. Click "Add New Subscriber" to add your first subscriber.
+            no_items_yet: 目前没有 Subscribers . 点击 "Add New Subscriber" 创建一个subscriber.
+          subscriber:
+            view_live_html: 查看 subscriber 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 subscriber
+            delete: 永久删除 subscriber
+      subscribers:
+        show:
+          other: 其他 Subscribers
+  activerecord:
+    attributes:
+      'refinery/subscribers/subscriber':
+        email: Email

@@ -1,0 +1,33 @@
+es:
+  refinery:
+    plugins:
+      saloons:
+        title: Saloons
+#        article: masculino/femenino
+    saloons:
+      admin:
+        saloons:
+          actions:
+            create_new: Crear nuevo saloon
+            reorder: Reordenar saloons
+            reorder_done: Reordenación de saloons completada
+          records:
+            title: Saloons
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay saloons todavía. Pulsa en "Crear nuevo Saloon" para crear tu primer saloon.
+          saloon:
+            view_live_html: Ver este saloon como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este saloon
+            delete: Borrar este saloon para siempre
+      saloons:
+        show:
+          other: Otros saloons
+  activerecord:
+    attributes:
+      'refinery/saloons/saloon':
+        title: Title
+        body: Body
+        adress: Adress
+        phone: Phone
+        time: Time
+        map: Map

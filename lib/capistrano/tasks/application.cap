@@ -1,0 +1,43 @@
+set :unicorn_start_cmd,     -> do
+  "(cd #{current_path};" +
+  "RAILS_ENV=#{fetch(:rails_env)} #{fetch(:bundle_cmd)} exec unicorn -#{fetch(:unicorn_args)}Dc #{fetch(:unicorn_conf)})"
+end
+
+namespace :deploy do
+  desc 'Start Application'
+  task :start do
+    on roles(:app) do
+      execute "touch #{current_path}/tmp/restart.txt"
+      execute fetch(:unicorn_start_cmd)
+    end
+  end
+
+  desc 'Stop Application'
+  task :stop do
+    on roles(:app) do
+      execute "[ -f #{fetch(:unicorn_pid)} ] && kill -QUIT `cat #{fetch(:unicorn_pid)}`"
+    end
+  end
+
+  desc 'Restart Application'
+  task :restart do
+    on roles(:app) do
+      if fetch(:unicorn_reset_mode)  == :hard
+        kill_signal = 'QUIT'
+        cmd_sep     = ' ; '
+      end
+
+      if fetch(:unicorn_reset_mode)  == :soft
+        kill_signal = 'USR2'
+        cmd_sep     = ' || '
+      end
+
+      kill_signal ||= 'QUIT'
+      cmd_sep     ||= ' ; '
+
+      execute "touch #{current_path}/tmp/restart.txt"
+      execute "[ -f #{fetch(:unicorn_pid)} ] && kill -#{kill_signal} `cat #{fetch(:unicorn_pid)}`#{cmd_sep}" +
+              "#{fetch(:unicorn_start_cmd)}"
+    end
+  end
+end

@@ -1,0 +1,28 @@
+it:
+  refinery:
+    plugins:
+      vacancies:
+        title: Vacancies
+    vacancies:
+      admin:
+        vacancies:
+          actions:
+            create_new: Aggiungi Nuovo Vacancy
+            reorder: Riordina Vacancies
+            reorder_done: Termina il Riordino di Vacancies
+          records:
+            title: Vacancies
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Vacancies. Clicca "Aggiungi Nuovo Vacancy" per aggiungere il tuo primo vacancy.
+          vacancy:
+            view_live_html: Guarda live questo vacancy <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo vacancy
+            delete: Rimuovi per sempre questo vacancy
+      vacancies:
+        show:
+          other: Altri Vacancies
+  activerecord:
+    attributes:
+      'refinery/vacancies/vacancy':
+        title: Title
+        body: Body

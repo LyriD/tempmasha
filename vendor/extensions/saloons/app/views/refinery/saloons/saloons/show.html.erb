@@ -1,0 +1,57 @@
+<% content_for :body_content_title do %>
+  <%= @saloon.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @saloon.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Body</h1>
+    <p>
+      <%=raw @saloon.body %>
+    </p>
+  </section>
+  <section>
+    <h1>Adress</h1>
+    <p>
+      <%=raw @saloon.adress %>
+    </p>
+  </section>
+  <section>
+    <h1>Phone</h1>
+    <p>
+      <%=raw @saloon.phone %>
+    </p>
+  </section>
+  <section>
+    <h1>Time</h1>
+    <p>
+      <%=raw @saloon.time %>
+    </p>
+  </section>
+  <section>
+    <h1>Map</h1>
+    <p>
+      <%= image_fu @saloon.map, nil %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="saloons">
+      <% @saloons.each do |saloon| %>
+        <li>
+          <%= link_to saloon.title, refinery.saloons_saloon_path(saloon) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

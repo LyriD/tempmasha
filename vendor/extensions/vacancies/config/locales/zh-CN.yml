@@ -1,0 +1,30 @@
+zh-CN:
+  refinery:
+    plugins:
+      vacancies:
+        title: Vacancies
+    vacancies:
+      admin:
+        vacancies:
+          actions:
+            create_new: 建立新的 Vacancy
+            reorder: 对 Vacancies 重新排序
+            reorder_done: 对 Vacancies 的重新排序结束
+          records:
+            title: Vacancies
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Vacancies yet. Click "Add New Vacancy" to add your first vacancy.
+            no_items_yet: 目前没有 Vacancies . 点击 "Add New Vacancy" 创建一个vacancy.
+          vacancy:
+            view_live_html: 查看 vacancy 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 vacancy
+            delete: 永久删除 vacancy
+      vacancies:
+        show:
+          other: 其他 Vacancies
+  activerecord:
+    attributes:
+      'refinery/vacancies/vacancy':
+        title: Title
+        body: Body

@@ -1,0 +1,24 @@
+ul#breadcrumbs
+  li: a href="/" Главная
+  - if @page.parent
+    li: a href="/#{@page.parent.slug}" = @page.parent.title
+  li: a href="#" = @page.title
+h1=@page.title
+.left.wide
+  - @page.parent.children.each do |p|
+    - unless p.title.include?('нструк')
+      a.service href="#{p.nested_path}"
+        = image_tag p.images.first.thumbnail(geometry: "220x110#c").url unless p.images.empty?
+        p = p.title
+    - if p.title.include?('нструк')
+      - @instruct = p
+  - if defined? @instruct and @instruct
+    a.instructors href="#{@instruct.nested_path}"
+      =image_tag 'yoga.jpg'
+      p = @instruct.title
+.right
+  - @page.children.each do |c|
+    .instructor
+      = image_tag c.images.first.thumbnail(geometry: "380x330#c").url unless c.images.empty?
+      h2 =c.title
+      = raw c.content_for(:body)

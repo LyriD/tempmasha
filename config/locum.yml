@@ -1,0 +1,14 @@
+defaults: &defaults
+  LOCUM_SERVER:      fluorine.locum.ru
+  LOCUM_LOGIN:       lyrs
+  LOCUM_USER:        hosting_lyrs
+  LOCUM_PASSWORD:    lwd8Knix
+development:
+  <<: *defaults
+  LOCUM_APPLICATION: 'mashenka'
+test:
+  <<: *defaults
+  LOCUM_APPLICATION: 'mashenka-test'
+production:
+  <<: *defaults
+  LOCUM_APPLICATION: 'mashenka-prod'

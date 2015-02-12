@@ -1,0 +1,32 @@
+cs:
+  refinery:
+    plugins:
+      saloons:
+        title: Saloons
+    saloons:
+      admin:
+        saloons:
+          actions:
+            create_new: Přidat Saloon
+            reorder: Řadit Saloons
+            reorder_done: Konec řazení Saloons
+          records:
+            title: Saloons
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Saloons. Zvolte "Přidat Saloon" pro přidání prvního saloon.
+          saloon:
+            view_live_html: Zobrazit náhled saloon<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit saloon
+            delete: Smazat saloon
+      saloons:
+        show:
+          other: Další Saloons
+  activerecord:
+    attributes:
+      'refinery/saloons/saloon':
+        title: Title
+        body: Body
+        adress: Adress
+        phone: Phone
+        time: Time
+        map: Map

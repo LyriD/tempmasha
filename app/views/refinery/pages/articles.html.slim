@@ -1,0 +1,16 @@
+ul#breadcrumbs
+  li: a href="/" Главная
+  li.active: a href="/#{@page.slug}" =@page.title
+h1=@page.title
+.left
+  .posts
+    - Refinery::Blog::Category.find_by_title(@page.title).posts.live.each do |p|
+      .post class="#{ %w(red green blue yellow).sample }"
+        = image_tag p.images.first.thumbnail(geometry: "300x800>").url unless p.images.empty?
+        h2=p.title
+        p=raw p.custom_teaser
+        =link_to 'Подробнее', get_resource_url(p), class: 'more'
+.right
+  = render 'salons'
+/a.allNews href="" показать еще
+

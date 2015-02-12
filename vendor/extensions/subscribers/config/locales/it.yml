@@ -1,0 +1,27 @@
+it:
+  refinery:
+    plugins:
+      subscribers:
+        title: Subscribers
+    subscribers:
+      admin:
+        subscribers:
+          actions:
+            create_new: Aggiungi Nuovo Subscriber
+            reorder: Riordina Subscribers
+            reorder_done: Termina il Riordino di Subscribers
+          records:
+            title: Subscribers
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Subscribers. Clicca "Aggiungi Nuovo Subscriber" per aggiungere il tuo primo subscriber.
+          subscriber:
+            view_live_html: Guarda live questo subscriber <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo subscriber
+            delete: Rimuovi per sempre questo subscriber
+      subscribers:
+        show:
+          other: Altri Subscribers
+  activerecord:
+    attributes:
+      'refinery/subscribers/subscriber':
+        email: Email

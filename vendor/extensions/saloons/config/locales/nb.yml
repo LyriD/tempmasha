@@ -1,0 +1,32 @@
+nb:
+  refinery:
+    plugins:
+      saloons:
+        title: Saloons
+    saloons:
+      admin:
+        saloons:
+          actions:
+            create_new: Lag en ny Saloon
+            reorder: Endre rekkefølgen på Saloons
+            reorder_done: Ferdig å endre rekkefølgen Saloons
+          records:
+            title: Saloons
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Saloons enda. Klikk på "Lag en ny Saloon" for å legge til din første saloon.
+          saloon:
+            view_live_html: Vis hvordan denne saloon ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne saloon
+            delete: Fjern denne saloon permanent
+      saloons:
+        show:
+          other: Andre Saloons
+  activerecord:
+    attributes:
+      'refinery/saloons/saloon':
+        title: Title
+        body: Body
+        adress: Adress
+        phone: Phone
+        time: Time
+        map: Map

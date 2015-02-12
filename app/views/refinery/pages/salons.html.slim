@@ -1,0 +1,24 @@
+ul#breadcrumbs
+  li: a href="#" Главная
+  li: a href="/#{@page.slug}" =@page.title
+h1=@page.title
+
+- Refinery::Saloons::Saloon.all.each do |s|
+  .salon
+    .fotorama-wrap
+      .left
+      .right
+      .fotorama data-nav="thumbs" data-width="100%" data-auto="false" data-loop="true"
+        - unless s.map.blank?
+          div data-img="#{s.map.thumbnail(geometry: "940x651#c").url}"
+            a.map href="#{s.map_url}" target="_blank"
+        - s.images.each do |image|
+          = image_tag image.thumbnail(geometry: "940x650>").url
+
+    .content
+      h2: a href="#" = s.title
+      = raw s.body
+      .address=s.adress
+      .phone=s.phone
+      time=s.time
+

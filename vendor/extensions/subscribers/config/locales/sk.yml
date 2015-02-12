@@ -1,0 +1,27 @@
+sk:
+  refinery:
+    plugins:
+      subscribers:
+        title: Subscribers
+    subscribers:
+      admin:
+        subscribers:
+          actions:
+            create_new: Pridať Subscriber
+            reorder: Preusporiadať Subscribers
+            reorder_done: Koniec radenia Subscribers
+          records:
+            title: Subscribers
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Subscribers. Kliknite na "Pridať Subscriber" pre pridanie prvého subscriber.
+          subscriber:
+            view_live_html: Zobraziť náhľad subscriber<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť subscriber
+            delete: Zmazať subscriber
+      subscribers:
+        show:
+          other: Daľšie Subscribers
+  activerecord:
+    attributes:
+      'refinery/subscribers/subscriber':
+        email: Email

@@ -1,0 +1,27 @@
+<% content_for :body_content_title do %>
+  <%= @subscriber.email %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Email</h1>
+    <p>
+      <%=raw @subscriber.email %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="subscribers">
+      <% @subscribers.each do |subscriber| %>
+        <li>
+          <%= link_to subscriber.email, refinery.subscribers_subscriber_path(subscriber) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

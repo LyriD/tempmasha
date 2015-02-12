@@ -1,0 +1,28 @@
+cs:
+  refinery:
+    plugins:
+      vacancies:
+        title: Vacancies
+    vacancies:
+      admin:
+        vacancies:
+          actions:
+            create_new: Přidat Vacancy
+            reorder: Řadit Vacancies
+            reorder_done: Konec řazení Vacancies
+          records:
+            title: Vacancies
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Vacancies. Zvolte "Přidat Vacancy" pro přidání prvního vacancy.
+          vacancy:
+            view_live_html: Zobrazit náhled vacancy<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit vacancy
+            delete: Smazat vacancy
+      vacancies:
+        show:
+          other: Další Vacancies
+  activerecord:
+    attributes:
+      'refinery/vacancies/vacancy':
+        title: Title
+        body: Body

@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="subscribers">
+    <% @subscribers.each do |subscriber| %>
+      <li>
+        <%= link_to subscriber.email, refinery.subscribers_subscriber_path(subscriber) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

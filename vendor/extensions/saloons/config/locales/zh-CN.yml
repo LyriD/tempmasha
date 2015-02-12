@@ -1,0 +1,34 @@
+zh-CN:
+  refinery:
+    plugins:
+      saloons:
+        title: Saloons
+    saloons:
+      admin:
+        saloons:
+          actions:
+            create_new: 建立新的 Saloon
+            reorder: 对 Saloons 重新排序
+            reorder_done: 对 Saloons 的重新排序结束
+          records:
+            title: Saloons
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Saloons yet. Click "Add New Saloon" to add your first saloon.
+            no_items_yet: 目前没有 Saloons . 点击 "Add New Saloon" 创建一个saloon.
+          saloon:
+            view_live_html: 查看 saloon 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 saloon
+            delete: 永久删除 saloon
+      saloons:
+        show:
+          other: 其他 Saloons
+  activerecord:
+    attributes:
+      'refinery/saloons/saloon':
+        title: Title
+        body: Body
+        adress: Adress
+        phone: Phone
+        time: Time
+        map: Map

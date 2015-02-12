@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<%= render "/refinery/html_tag" %>
+  <head>
+
+
+    <%= render "/refinery/head" %>
+  </head>
+<body class="<%= yield :bodyClass %>">
+
+<div class="modal" id="govno" style="display: none">
+  <a href="#" class="close"></a>
+          <h1>Подписаться на новости</h1>
+        <%= form_for Refinery::Subscribers::Subscriber.new, url: '/subsribe_me' do |f| %>
+           <%= f.text_field :email%>
+           <button type="submit">Подписаться</button>
+        <% end %>
+
+
+
+</div>
+
+<div id="root">
+  <header>
+    <a class="subscribe" href="#" data-modal="govno" style="margin-right: -53px;">подписаться на новости и акции</a><a class="logo" href="/"></a>
+    <ul>
+      <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+    </ul>
+  </header>
+  <div class="container">
+       <%= yield %>
+  </div>
+  <div id="root_footer"></div>
+</div>
+<div id="footer">
+  <div class="container">
+    <a class="logo" href="/"></a>
+    <ul>
+      <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+    </ul>
+    <p С="">
+      2014 - все права защищены
+    </p>
+  </div>
+</div>
+</body>
+</html>

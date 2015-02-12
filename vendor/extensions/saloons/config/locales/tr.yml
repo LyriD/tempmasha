@@ -1,0 +1,32 @@
+tr:
+  refinery:
+    plugins:
+      saloons:
+        title: Saloons
+    saloons:
+      admin:
+        saloons:
+          actions:
+            create_new: Yeni Ekle Saloon
+            reorder: Tekrar sirala Saloons
+            reorder_done: Tekrar siralama tamamlandiSaloons
+          records:
+            title: Saloons
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Saloons yok henuz.  Tikla "Yeni Ekle Saloon" eklemek senin ilk saloon.
+          saloon:
+            view_live_html: Bunu canlu saloon goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle saloon
+            delete: Bunu Sil saloon sonsuza dek
+      saloons:
+        show:
+          other: Diger Saloons
+  activerecord:
+    attributes:
+      'refinery/saloons/saloon':
+        title: Title
+        body: Body
+        adress: Adress
+        phone: Phone
+        time: Time
+        map: Map

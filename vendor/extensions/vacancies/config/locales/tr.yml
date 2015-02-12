@@ -1,0 +1,28 @@
+tr:
+  refinery:
+    plugins:
+      vacancies:
+        title: Vacancies
+    vacancies:
+      admin:
+        vacancies:
+          actions:
+            create_new: Yeni Ekle Vacancy
+            reorder: Tekrar sirala Vacancies
+            reorder_done: Tekrar siralama tamamlandiVacancies
+          records:
+            title: Vacancies
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Vacancies yok henuz.  Tikla "Yeni Ekle Vacancy" eklemek senin ilk vacancy.
+          vacancy:
+            view_live_html: Bunu canlu vacancy goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle vacancy
+            delete: Bunu Sil vacancy sonsuza dek
+      vacancies:
+        show:
+          other: Diger Vacancies
+  activerecord:
+    attributes:
+      'refinery/vacancies/vacancy':
+        title: Title
+        body: Body

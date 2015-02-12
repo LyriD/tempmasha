@@ -1,0 +1,27 @@
+tr:
+  refinery:
+    plugins:
+      subscribers:
+        title: Subscribers
+    subscribers:
+      admin:
+        subscribers:
+          actions:
+            create_new: Yeni Ekle Subscriber
+            reorder: Tekrar sirala Subscribers
+            reorder_done: Tekrar siralama tamamlandiSubscribers
+          records:
+            title: Subscribers
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Subscribers yok henuz.  Tikla "Yeni Ekle Subscriber" eklemek senin ilk subscriber.
+          subscriber:
+            view_live_html: Bunu canlu subscriber goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle subscriber
+            delete: Bunu Sil subscriber sonsuza dek
+      subscribers:
+        show:
+          other: Diger Subscribers
+  activerecord:
+    attributes:
+      'refinery/subscribers/subscriber':
+        email: Email

@@ -1,0 +1,29 @@
+es:
+  refinery:
+    plugins:
+      vacancies:
+        title: Vacancies
+#        article: masculino/femenino
+    vacancies:
+      admin:
+        vacancies:
+          actions:
+            create_new: Crear nuevo vacancy
+            reorder: Reordenar vacancies
+            reorder_done: Reordenación de vacancies completada
+          records:
+            title: Vacancies
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay vacancies todavía. Pulsa en "Crear nuevo Vacancy" para crear tu primer vacancy.
+          vacancy:
+            view_live_html: Ver este vacancy como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este vacancy
+            delete: Borrar este vacancy para siempre
+      vacancies:
+        show:
+          other: Otros vacancies
+  activerecord:
+    attributes:
+      'refinery/vacancies/vacancy':
+        title: Title
+        body: Body

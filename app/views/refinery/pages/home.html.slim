@@ -1,0 +1,40 @@
+- main = Refinery::Page.where(:out => 0)
+- main << Refinery::Blog::Post.where(:out => 0)
+- main = main.flatten.sort_by { |hsh| hsh[:created_at] }
+
+- main2 = Refinery::Page.where(:out => 1)
+- main2 << Refinery::Blog::Post.where(:out => 1)
+- main2 = main2.flatten.sort_by { |hsh| hsh[:created_at] }
+
+
+.fotorama-wrap
+  .left
+  .right
+  .fotorama.main data-transition="crossfade" data-auto="false" data-loop="true"
+    - main.each do |m|
+      - unless m.images.empty?
+        div data-img="#{m.images.first.thumbnail(geometry: "952x450#c").url unless m.images.empty?}"
+          a href="#{get_resource_url(m)}" = m.title
+
+.framewrap
+  .left
+  .right
+  #frame
+    ul.slidee
+      - main2.each do |m|
+        li
+          = image_tag m.images.first.thumbnail(geometry: "220x110#c").url unless m.images.empty?
+          a href="#{get_resource_url(m)}" = m.title
+
+.left
+  .posts
+    - Refinery::Blog::Post.order("RANDOM()").limit(4).each do |p|
+      .post class="#{ %w(red green blue yellow).sample }"
+        = image_tag p.images.first.thumbnail(geometry: "300x800>").url unless p.images.empty?
+        h2=p.title
+        p=raw p.custom_teaser
+        =link_to 'Подробнее', "/action/#{p.slug}", class: 'more'
+.right
+  = render 'salons'
+a.allNews href="#" все акции новости и скидки
+

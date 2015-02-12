@@ -1,0 +1,782 @@
+@import compass
+@import compass/layout
+@import normalize
+//@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic-ext)
+@include sticky-footer(178px)
+
+
+
+$width: 953px
+
+a
+  text-decoration: none
+  color: inherit
+
+p
+  color: #333
+  font-size: 14px
+  strong
+    font-weight: bold
+  i
+    font-style: italic
+
+p+ul
+  list-style: none
+  li
+    text-indent: -5px
+    font-size: 14px
+    &:before
+      content: "-"
+      position: relative
+      left: -5px
+
+em
+  position: relative
+  font-size: 14px
+  font-weight: bold
+  font-style: italic
+  margin-left: 65px
+  border-left: 5px solid #1C81BD
+  padding-left: 10px
+  &:before
+    content: ''
+    position: absolute
+    top: 5px
+    left: -45px
+    background: url("quotes.png") no-repeat
+    width: 28px
+    height: 21px
+
+body
+  font-family: 'PT Sans', sans-serif
+  background: #F3F3F3
+  #breadcrumbs
+    margin: 26px 0 0
+    padding: 0
+    list-style: none
+    li
+      display: inline-block
+      font-size: 14px
+      text-transform: uppercase
+      &:not(:first-child):before
+        content: '/'
+        display: inline-block
+        margin: 0 10px
+      &:not(:last-child) a
+        color: #1080C0
+        text-decoration: underline
+
+
+
+
+
+
+  #root > .container > h1
+    font-size: 37px
+    text-transform: uppercase
+    margin: 20px 0 24px
+    color: #333
+
+#root
+  background: url("header-bg.jpg") 0px 25px repeat-x
+  & > .container
+    margin: 0 auto
+    width: $width
+
+header
+  position: relative
+  background: url("header-head.jpg") no-repeat 0 25px
+  width: $width
+  margin: 0 auto
+  height: 117px
+  a.subscribe, a.rss
+    position: relative
+    position: absolute
+    background: url("icon-mail.png") no-repeat 0 center
+    display: inline-block
+    line-height: 20px
+    padding-left: 20px
+    margin-left: 42px
+    color: #DB2B27
+    right: 60px
+    top: 2px
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 18px
+      width: 100%
+      border-bottom: 1px solid #900
+      box-sizing: border-box
+      border-left: 40px solid #fff
+  a.subscribe:before
+    border-bottom-style: dotted
+    border-bottom-color: #EF0000
+  a.subscribe:hover:before
+    border-bottom-style: solid
+
+  a.rss
+    background-image: url("icon-rss.png")
+    color: #F28526
+    text-transform: uppercase
+    right: 0
+  a.rss:before
+    border-bottom-color: #F48609
+  a.rss:hover:before
+    border-bottom: none
+
+  a.logo
+    position: absolute
+    background: url("logo.png") no-repeat
+    width: 175px
+    height: 45px
+    top: 50px
+    left: 15px
+  ul
+    position: absolute
+    list-style: none
+    padding: 0
+    margin: 0
+    font-size: 12px
+    top: 66px
+    left: 235px
+    width: 705px
+    text-align: center
+    li
+      display: inline-block
+      text-transform: uppercase
+      margin: 0 6px
+      //margin-left: 20px
+      line-height: 12px
+      border-bottom: 1px solid #000
+      &:hover
+        border: none
+
+
+
+
+
+
+
+#footer
+  position: relative
+  background: #9136a5
+  color: #fff
+  &:before
+    content: ''
+    position: absolute
+    bottom: 0
+    height: 8px
+    width: 100%
+    background: url('border-bottom.png')
+  .container
+    margin: 0 auto
+    width: $width
+    position: relative
+    a.logo
+      position: absolute
+      background: url("logo-white.png") no-repeat
+      width: 190px
+      height: 48px
+      top: 34px
+      left: 0
+    p
+      position: absolute
+      top: 110px
+      left: 410px
+      font-size: 12px
+      color: #fff
+      text-transform: uppercase
+
+    ul
+      position: absolute
+      list-style: none
+      margin: 0
+      padding: 0
+      top: 50px
+      right: 0
+
+      li
+        font-size: 12px
+        color: #fff
+        display: inline-block
+        text-transform: uppercase
+        margin-left: 20px
+        line-height: 12px
+        border-bottom: 1px solid #fff
+        &:first-child
+          margin-left: 0
+        &:hover
+          border: none
+
+.left.wide
+  width: 220px
+  &+.right
+    width: 700px
+    h2
+      font-size: 24px
+      margin-top: 60px
+
+.left > img, .right > img
+  width: 100%
+
+.left
+  width: 620px
+  float: left
+.right
+  width: 300px
+  float: right
+  h2
+    font-size: 30px
+    text-transform: uppercase
+    margin: 0
+    padding: 0
+    color: #333
+  .salon
+    display: block
+    position: relative
+    margin-top: 20px
+    margin-bottom: 52px
+    color: #fff
+    img
+      display: block
+      width: 100%
+      margin-bottom: 32px
+    &:hover .location
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(242, 155, 68, 1)
+    &.yellow:hover .location
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(242, 155, 68, 1)
+    &.red:hover .location
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(242, 110, 141, 1)
+    &.green:hover .location
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(118, 158, 96, 1)
+    &.blue:hover .location
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(0, 144, 203, 1)
+
+    .location
+      position: absolute
+      bottom: 32px
+      width: 100%
+      box-sizing: border-box
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(242, 155, 68, 0.8)
+      padding: 14px 42px
+      .metro
+        font-size: 18px
+      .address
+        font-size: 14px
+    &.yellow .location
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(242, 155, 68, 0.8)
+    &.red .location
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(242, 110, 141, 0.8)
+    &.green .location
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(118, 158, 96, 0.8)
+    &.blue .location
+      background: url("icon-placemark-white.png") no-repeat 23px 18px, rgba(0, 144, 203, 0.8)
+    time
+      box-sizing: border-box
+      padding: 0 42px
+      position: absolute
+      width: 100%
+      bottom: 0
+      line-height: 32px
+      background: url("icon-clock-white.png") no-repeat 18px 9px, url("arrow-small-right.png") no-repeat 280px 9px, #F29B44
+      font-size: 16px
+      font-weight: bold
+    &.yellow time
+      background: url("icon-clock-white.png") no-repeat 18px 9px, url("arrow-small-right.png") no-repeat 280px 9px, rgb(242, 155, 68)
+    &.red time
+      background: url("icon-clock-white.png") no-repeat 18px 9px, url("arrow-small-right.png") no-repeat 280px 9px, rgb(242, 110, 141)
+    &.green time
+      background: url("icon-clock-white.png") no-repeat 18px 9px, url("arrow-small-right.png") no-repeat 280px 9px, rgb(118, 158, 96)
+    &.blue time
+      background: url("icon-clock-white.png") no-repeat 18px 9px, url("arrow-small-right.png") no-repeat 280px 9px, rgb(0, 144, 203)
+
+
+
+
+
+.posts
+  .post
+    width: 300px
+    margin-bottom: 40px
+    background: #fff
+    &.red
+      h2
+        color: #E85150
+      a.more
+        color: #E85150
+        border-color: #E85150
+        &:hover
+          background: #E85150
+          color: #fff
+    &.green
+      h2
+        color: #3F9521
+      a.more
+        color: #3F9521
+        border-color: #3F9521
+        &:hover
+          background: #3F9521
+          color: #fff
+
+    &.blue
+      h2
+        color: #1C81BD
+      a.more
+        color: #1C81BD
+        border-color: #1C81BD
+        &:hover
+          background: #1C81BD
+          color: #fff
+
+    &.yellow
+      h2
+        color: #FD914E
+      a.more
+        color: #FD914E
+        border-color: #FD914E
+        &:hover
+          background: #FD914E
+          color: #fff
+
+    img
+      display: block
+      width: 100%
+    h2
+      font-size: 24px
+      text-transform: uppercase
+      margin: 24px 14px 20px
+    p
+      font-style: italic
+      color: #666
+      margin: 0 14px 24px
+    a.more
+      display: block
+      width: 170px
+      line-height: 40px
+      border: 1px solid #333
+      text-align: center
+      margin: 0 auto 30px
+      font-style: italic
+      font-size: 14px
+      text-transform: uppercase
+
+
+a.allNews
+  display: inline-block
+  clear: both
+  margin: 50px 30px 60px 160px
+  padding: 14px 36px
+  box-sizing: border-box
+  border: 1px solid #692478
+  color: #692478
+  text-transform: uppercase
+  font-size: 18px
+  font-style: italic
+
+
+.vacancy
+  h2
+    color: #EB504C
+    text-transform: uppercase
+    font-size: 24px
+    margin: 20px 0
+  p
+    margin-bottom: 14px
+    color: #333
+    font-size: 14px
+  a.more
+    display: inline-block
+    color: #EB504C
+    line-height: 40px
+    border: 1px solid #EB504C
+    text-align: center
+    margin: 0 auto 30px
+    font-style: italic
+    padding: 0 30px
+    font-size: 14px
+    text-transform: uppercase
+    &:hover
+      color: #ffffff
+      background: #EB504C
+
+
+
+
+.others
+  h2
+    text-transform: uppercase
+    color: #333
+    margin: 37px 0 20px
+
+
+a.service
+  display: block
+  position: relative
+  margin-bottom: 10px
+  width: 220px
+  height: 110px
+  &:before
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    height: 100%
+  &:hover:after
+    background: rgba(106, 31, 122, 0.81)
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0.2)
+  img
+    display: block
+    position: absolute
+    top: 0
+    width: 100%
+  p
+    display: inline-block
+    vertical-align: middle
+    color: #fff
+    margin: 0
+    position: relative
+    z-index: 1
+    text-align: center
+    width: 100%
+    box-sizing: border-box
+    padding: 0 12px
+    font-weight: bold
+    text-transform: uppercase
+    font-size: 20px
+
+a.instructors
+  position: relative
+  display: block
+  img
+    display: block
+  p
+    position: absolute
+    width: 100%
+    padding: 20px 40px
+    box-sizing: border-box
+    font-weight: bold
+    color: #1C81BD
+    text-transform: uppercase
+    top: 0
+    font-size: 20px
+    z-index: 1
+    text-align: center
+
+table
+  width: 100%
+  margin-bottom: 60px
+  td
+    padding: 14px 16px
+  text-transform: uppercase
+  thead
+    text-align: center
+    font-size: 12px
+  tbody
+    font-size: 16px
+    td
+      vertical-align: middle
+    tr:nth-child(odd)
+      background: #E6E6E6
+    td:not(:first-child)
+      color: #666
+      text-align: center
+.table
+  position: relative
+  .cards
+    position: absolute
+    width: 220px
+    top: 100px
+    left: -250px
+    h2
+      font-size: 18px !important
+      font-weight: normal
+
+    a.visa, a.mc
+      display: inline-block
+      background: url("card-visa.png") no-repeat left center
+      width: 64px
+      height: 41px
+      margin-right: 10px
+      margin-top: 10px
+    a.mc
+      background-image: url("card-mc.png")
+
+
+
+.instructor
+  +clearfix()
+  margin-bottom: 40px
+  img
+    float: left
+    width: 380px
+  h2, p
+    float: right
+    width: 280px
+    margin-top: 0 !important
+
+.salon
+  +clearfix()
+  margin-bottom: 40px
+  .fotorama-wrap
+    float: left
+    width: 620px
+  .content
+    float: right
+    width: 290px
+    h2
+      a
+        text-decoration: underline
+        color: #1C81BD
+        text-transform: uppercase
+        font-weight: normal
+
+    .address, .phone, time
+      font-size: 14px
+      font-weight: bold
+      color: #333
+      margin-bottom: 25px
+      padding-left: 25px
+      background: url("icon-home-black.png") no-repeat 1px 2px
+    .address
+      margin-top: 40px
+    .phone
+      background-image: url("icon-phone-black.png")
+    time
+      background-image: url("icon-clock-black.png")
+
+
+
+.fotorama.main
+
+  margin: 25px 0
+  .fotorama__html
+    position: relative
+    a
+      position: absolute
+      bottom: 0
+      width: 570px
+      left: 50%
+
+      padding: 34px 44px
+      box-sizing: border-box
+      text-align: center
+      background: rgba(105, 31, 121, 0.51)
+      margin: 0
+      margin-left: -570px/2
+      color: #fff
+      font-size: 30px
+      text-transform: uppercase
+      font-weight: bold
+      &:hover:after
+        background: #fff
+        color: #A616AB
+      &:after
+        content: 'подробнее'
+        display: block
+        margin: 10px auto -10px
+        width: 170px
+        text-align: center
+        font-weight: normal
+        font-size: 14px
+        border: 1px solid #fff
+        font-style: italic
+        padding: 15px 0
+
+.framewrap
+  position: relative
+  .left, .right
+    position: absolute
+    top: 46px
+    background: url("arrow-left.png") no-repeat
+    width: 8px
+    height: 15px
+    cursor: pointer
+  .left
+    left: -18px
+  .right
+    right: -18px
+    background-image: url("arrow-right.png")
+
+
+#frame
+  margin-bottom: 40px
+  width: 100%
+  height: 160px
+  padding: 0
+  .slidee
+    margin: 0
+    padding: 0
+    height: 100%
+    list-style: none
+    li
+      position: relative
+      float: left
+      margin: 0 25px 0 0
+      padding: 0
+      width: 220px
+      height: 110px
+      img
+        position: absolute
+      &:before
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        height: 100%
+      &:hover:after
+        background: rgba(106, 31, 122, 0.81)
+      &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0,0,0,.5)
+      a
+        display: inline-block
+        vertical-align: middle
+        width: 100%
+        text-align: center
+        position: relative
+        z-index: 1
+        color: #fff
+        font-size: 20px
+        font-weight: bold
+        padding: 0 30px
+        box-sizing: border-box
+        text-transform: uppercase
+        line-height: 20px
+
+.modal
+  position: relative
+  width: 300px
+  background: #ffffff
+  margin: 200px auto 0
+  box-sizing: border-box
+  padding: 35px 28px 0
+  a.close
+    background: url("icon-close.png") no-repeat
+    width: 14px
+    height: 14px
+    position: absolute
+    top: -16px
+    right: -16px
+  h1
+    text-transform: uppercase
+    color: #E85150
+    font-size: 24px
+    font-weight: normal
+    text-align: center
+    margin-top: 0
+
+  form
+    input[type="text"], textarea
+      margin: 0 0 10px
+      border: 1px solid #EC7E7C
+      padding: 12px
+      font-size: 16px
+      color: #333
+      box-sizing: border-box
+      width: 100%
+    textarea
+      height: 110px
+    p
+      font-size: 12px
+      line-height: 1em
+      margin: 0
+      color: #666
+    input[type="file"]
+      display: none
+    a.attach
+      display: block
+      background: url("icon-attach.png") no-repeat
+      padding-left: 22px
+      color: #EC7E7C
+      text-transform: uppercase
+      text-decoration: underline
+      font-weight: bold
+      font-size: 12px
+      padding-bottom: 6px
+
+    button[type="submit"]
+      outline: none
+      display: block
+      width: 300px
+      margin: 10px -28px 0
+      background: #EC7E7C
+      color: #fff
+      text-transform: uppercase
+      border: none
+      text-align: center
+      font-size: 18px
+      font-weight: bold
+      padding: 20px 50px
+      cursor: pointer
+      &:hover
+        background: #B64847
+
+
+
+.salon
+  .fotorama
+    .fotorama__html
+      position: relative
+      a.map
+        position: absolute
+        width: 100%
+        height: 100%
+
+.fotorama__nav__frame.fotorama__nav__frame--dot
+  width: 20px
+.fotorama__nav__frame.fotorama__active .fotorama__dot
+  width: 15px
+  height: 3px
+  background: #333
+
+.fotorama__dot
+  border: none
+  height: 3px
+  background: #cacaca
+  width: 15px
+
+
+.fotorama-wrap
+  position: relative
+  & > .left, & > .right
+    cursor: pointer
+    position: absolute
+    top: 50%
+    margin-top: -40px
+    width: 0
+    height: 0
+    border-style: solid
+    z-index: 10
+    &:before
+      content: ''
+      position: absolute
+
+      width: 8px
+      height: 15px
+      top: -7px
+  & > .left
+    left: 0
+    border-width: 30px 0 30px 30px
+    border-color: transparent transparent transparent #F3F3F3
+    &:before
+      background: url("arrow-left.png") no-repeat
+      left: -25px
+
+  & > .right
+    right: 0
+    border-width: 30px 30px 30px 0
+    border-color: transparent #F3F3F3 transparent transparent
+    &:before
+      background: url("arrow-right.png") no-repeat
+      right: -25px

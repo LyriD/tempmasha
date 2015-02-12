@@ -1,0 +1,8 @@
+h2 Салоны в Москве
+- Refinery::Saloons::Saloon.all.each do |s|
+  a.salon href="/contacts" class="#{%w(yellow green red blue).sample}"
+    = image_tag s.images.first.thumbnail(geometry: "600x600>").url unless s.images.empty?
+    .location
+      .metro=s.metro
+      .address=s.adress
+    time=s.time

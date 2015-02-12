@@ -1,0 +1,28 @@
+es:
+  refinery:
+    plugins:
+      subscribers:
+        title: Subscribers
+#        article: masculino/femenino
+    subscribers:
+      admin:
+        subscribers:
+          actions:
+            create_new: Crear nuevo subscriber
+            reorder: Reordenar subscribers
+            reorder_done: Reordenación de subscribers completada
+          records:
+            title: Subscribers
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay subscribers todavía. Pulsa en "Crear nuevo Subscriber" para crear tu primer subscriber.
+          subscriber:
+            view_live_html: Ver este subscriber como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este subscriber
+            delete: Borrar este subscriber para siempre
+      subscribers:
+        show:
+          other: Otros subscribers
+  activerecord:
+    attributes:
+      'refinery/subscribers/subscriber':
+        email: Email

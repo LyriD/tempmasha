@@ -1,0 +1,32 @@
+en:
+  refinery:
+    plugins:
+      saloons:
+        title: Saloons
+    saloons:
+      admin:
+        saloons:
+          actions:
+            create_new: Add New Saloon
+            reorder: Reorder Saloons
+            reorder_done: Done Reordering Saloons
+          records:
+            title: Saloons
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Saloons yet. Click "Add New Saloon" to add your first saloon.
+          saloon:
+            view_live_html: View this saloon live <br/><em>(opens in a new window)</em>
+            edit: Edit this saloon
+            delete: Remove this saloon forever
+      saloons:
+        show:
+          other: Other Saloons
+  activerecord:
+    attributes:
+      'refinery/saloons/saloon':
+        title: Title
+        body: Body
+        adress: Adress
+        phone: Phone
+        time: Time
+        map: Map

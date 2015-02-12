@@ -1,0 +1,32 @@
+fr:
+  refinery:
+    plugins:
+      saloons:
+        title: Saloons
+    saloons:
+      admin:
+        saloons:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Saloon
+            reorder: Réordonner les Saloons
+            reorder_done: Fin de réordonnancement des Saloons
+          records:
+            title: Saloons
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Saloon. Cliquer sur "Créer un(e) nouve(au/l/lle) Saloon" pour créer votre premi(er/ère) saloon.'
+          saloon:
+            view_live_html: Voir ce(t/tte) saloon <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) saloon
+            delete: Supprimer définitivement ce(t/tte) saloon
+      saloons:
+        show:
+          other: Autres Saloons
+  activerecord:
+    attributes:
+      'refinery/saloons/saloon':
+        title: Title
+        body: Body
+        adress: Adress
+        phone: Phone
+        time: Time
+        map: Map
